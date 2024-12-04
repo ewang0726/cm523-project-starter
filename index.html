@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- PUT A TITLE IN HERE -->
-    <title>This is the demo</title>
+    <title>Emily Wang</title>
     <!-- PUT A DESCRIPTION IN HERE -->
     <meta name="description" content="describe content of the page here...." />
     <!-- LINK TO NORMALIZE (FOR CONSISTENCY) -->
-    <link rel="stylesheet" href="styles.normalize.css" />
+    <link rel="stylesheet" href="styles/normalize.css" />
     <!-- LINK TO ANY FRAMEWORK STYLES HERE-->
     <!-- LINK TO YOUR STYLES -->
     <link rel="stylesheet" href="styles/styles.css" />
@@ -17,9 +17,76 @@
     <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
     <script src="scripts/scripts.js" defer></script>
   </head>
-  <body>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Elite&display=swap');
+  </style>
+    <body>
     <!-- YOUR HTML GOES HERE -->
+    <header>
+      <h1>Traditional Chinese Colors</h1> <!-- Main title on the page -->
+  </header>
+  <section class="color-grid">
+    <!-- Color 1 -->
+    <div class="color-block-container">
+        <div class="color-block" style="background-color: #BACCD9;" data-name="云水蓝 (Yunshuilan)" data-hex="#BACCD9" data-description="Commonly used in dyeing and artistic works.">
+        </div>
+        <p class="color-name">云水蓝 (Yunshuilan)</p>
+    </div>
+
+    <!-- Color 2 -->
+    <div class="color-block-container">
+        <div class="color-block" style="background-color: #1772B4;" data-name="群青 (Lake Blue)" data-hex="#1772B4" data-description="One of the oldest colors in Chinese history, is a pure and elegant blue color seen in a clear sky after rain.">
+        </div>
+        <p class="color-name">群青 (Lake Blue)</p>
+    </div>
+
+    <!-- Color 3 -->
+    <div class="color-block-container">
+        <div class="color-block" style="background-color: #20A162;" data-name="翠绿 (Emerald Green)" data-hex="#20A162" data-description="Emerald Green in ancient Chinese poetry represents a picturesque scene of spring mountains.">
+        </div>
+        <p class="color-name">翠绿 (Emerald Green)</p>
+    </div>
+
+    <!-- Color 4 -->
+    <div class="color-block-container">
+        <div class="color-block" style="background-color: #F1CA17;" data-name="柚黄 (Pomelo Yellow)" data-hex="#F1CA17" data-description="Pomelo Yellow is a delicate and elegant color resembling silk.">
+        </div>
+        <p class="color-name">柚黄 (Pomelo Yellow)</p>
+    </div>
+
+    <!-- Color 5 -->
+    <div class="color-block-container">
+        <div class="color-block" style="background-color: #ED5126;" data-name="朱红 (Oriental Red)" data-hex="#ED5126" data-description="Oriental Red is the refined flame and the rising sun, and carries good wishes and aspirations for a better life.">
+        </div>
+        <p class="color-name">朱红 (Oriental Red)</p>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="color-modal" class="modal">
+    <span class="close-button">&times;</span>
+    <div class="modal-content">
+        <h2 id="color-name"></h2>
+        <p><strong>HEX Code:</strong> <span id="color-hex"></span></p>
+        <p id="color-description"></p>
+    </div>
+</div>
+
+    </section>
+    
+
+
+  </section>
+  <div id="color-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 id="color-name"></h2> <!-- Ensure this ID matches -->
+        <p><strong>HEX Code:</strong> <span id="color-hex"></span></p>
+        <p id="color-description"></p>
+    </div>
+</div>
 
     <!-- YOUR EXTERNAL PLUG-IN MAY ASK YOU TO PUT A SCRIPT TAG HERE. -->
   </body>
 </html>
+
