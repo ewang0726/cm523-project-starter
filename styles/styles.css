@@ -241,9 +241,49 @@ p {
    text-align: center;
 }
 
+/* Footer Section Title */
+.footer-title {
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #080402;
+}
 
+/* Footer Buttons */
+.footer-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    margin: 30px 0; /* Space above and below the button container */
+}
 
+/* Button Styles */
+.button {
+    display: inline-block;
+    text-decoration: none; /* Remove underline */
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* Text color */
+    background-color: #333333; /* Button background color */
+    padding: 10px 20px; /* Padding for a clickable area */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
+/* Hover Effect */
+.button:hover {
+    background-color: #555555; /* Lighter shade on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Button Active State */
+.button:active {
+    background-color: #000000; /* Darker shade on click */
+    transform: scale(0.95); /* Slight shrink effect on click */
+}
 
 
 
