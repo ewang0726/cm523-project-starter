@@ -125,6 +125,11 @@ p {
    transition: transform 0.3s ease;
 }
 
+.color-block.selected {
+    border: 3px solid #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
 
 .color-block:hover {
    transform: scale(1.05);

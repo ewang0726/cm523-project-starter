@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutText = document.querySelector('.about-title');
     const closeButton = document.querySelector('.close-button');
     const tones = ["blue", "green", "yellow", "red"]; // Define tone categories
+    let previouslySelectedBlock = null; 
  
  //Function to determine text color based on brightness
  const getTextColor = (hex) => {
@@ -112,6 +113,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const block = e.target.closest('.color-block');
         if (block) {
             const selectedColor = block.getAttribute('data-hex');
+
+            //Remove the selected class from the previous selected block
+            if (previouslySelectedBlock) {
+                previouslySelectedBlock.classList.remove('selected');
+            }
+
+            //Add the selected class to the current block
+            block.classList.add('selected');
+            previouslySelectedBlock = block;
  
  
             modalName.textContent = block.getAttribute('data-name');
