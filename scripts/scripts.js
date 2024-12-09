@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "樱桃红 (Cherry Red)", hex: "#D2042D", description: "Bright red reminiscent of ripe cherries.", cmyk: "0, 97, 79, 18", rgb: "210, 4, 45", tone: "red" },
  
  
-        // Add more colors here for a total of 54
+        // Add more colors here
     ];
  
  
