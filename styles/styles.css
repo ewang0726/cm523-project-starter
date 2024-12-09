@@ -24,9 +24,9 @@ p {
 .header {
    text-align: center;
    padding: 20px;
-   background: rgb(109,180,58);
-   background: linear-gradient(90deg, rgba(109,180,58,1) 0%, rgba(253,29,29,1) 50%, rgba(69,74,252,1) 100%);
+   background: #F2E7E5;
 }
+
 /*Flexbox for Title and Logo */
 .header-content {
    display: flex;
