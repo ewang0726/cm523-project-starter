@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add more colors here
     ];
  
- 
     // Code to dynamically generate the tone sections and modal logic (unchanged)
     const colorGrid = document.querySelector('.color-grid');
     const modal = document.getElementById('color-modal');
@@ -50,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButton = document.querySelector('.close-button');
     const tones = ["blue", "green", "yellow", "red"]; // Define tone categories
     let previouslySelectedBlock = null; 
- 
+
  //Function to determine text color based on brightness
  const getTextColor = (hex) => {
     //Convert Hex to RGB
@@ -150,6 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none';
     });
  
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+        }
+    });
  
     window.addEventListener('click', e => {
         if (e.target === modal) {
