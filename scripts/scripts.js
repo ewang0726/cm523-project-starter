@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
         // Add more colors here
     ];
- 
+
     // Code to dynamically generate the tone sections and modal logic (unchanged)
     const colorGrid = document.querySelector('.color-grid');
     const modal = document.getElementById('color-modal');
@@ -50,6 +50,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const tones = ["blue", "green", "yellow", "red"]; // Define tone categories
     let previouslySelectedBlock = null; 
 
+        // Loop through each tone and create sections (unchanged)
+ tones.forEach(tone => {
+    const toneSection = document.createElement('div');
+    toneSection.classList.add('tone-section');
+ 
+ 
+    const toneTitle = document.createElement('h2');
+    toneTitle.textContent = tone.charAt(0).toUpperCase() + tone.slice(1);
+    toneSection.appendChild(toneTitle);
+ 
+ 
+    colors
+        .filter(color => color.tone === tone)
+        .forEach(color => {
+            const colorBlockContainer = document.createElement('div');
+            colorBlockContainer.classList.add('color-block-container');
+ 
+ 
+            const colorBlock = document.createElement('div');
+            colorBlock.classList.add('color-block');
+            colorBlock.style.backgroundColor = color.hex;
+            colorBlock.setAttribute('data-name', color.name);
+            colorBlock.setAttribute('data-hex', color.hex);
+            colorBlock.setAttribute('data-description', color.description);
+            colorBlock.setAttribute('data-cmyk', color.cmyk);
+            colorBlock.setAttribute('data-rgb', color.rgb);
+ 
+ 
+            const colorName = document.createElement('p');
+            colorName.classList.add('color-name');
+            colorName.textContent = color.name;
+ 
+ 
+            colorBlockContainer.appendChild(colorBlock);
+            colorBlockContainer.appendChild(colorName);
+            toneSection.appendChild(colorBlockContainer);
+        });
+ 
+ 
+        colorGrid.appendChild(toneSection);
+    });
+
  //Function to determine text color based on brightness
  const getTextColor = (hex) => {
     //Convert Hex to RGB
@@ -63,49 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //Return black for light backgrounds and white for dark backgrounds
     return brightness > 128 ? '#000000' : '#FFFFFF';
  };
-
-    // Loop through each tone and create sections (unchanged)
-    tones.forEach(tone => {
-        const toneSection = document.createElement('div');
-        toneSection.classList.add('tone-section');
- 
- 
-        const toneTitle = document.createElement('h2');
-        toneTitle.textContent = tone.charAt(0).toUpperCase() + tone.slice(1);
-        toneSection.appendChild(toneTitle);
- 
- 
-        colors
-            .filter(color => color.tone === tone)
-            .forEach(color => {
-                const colorBlockContainer = document.createElement('div');
-                colorBlockContainer.classList.add('color-block-container');
- 
- 
-                const colorBlock = document.createElement('div');
-                colorBlock.classList.add('color-block');
-                colorBlock.style.backgroundColor = color.hex;
-                colorBlock.setAttribute('data-name', color.name);
-                colorBlock.setAttribute('data-hex', color.hex);
-                colorBlock.setAttribute('data-description', color.description);
-                colorBlock.setAttribute('data-cmyk', color.cmyk);
-                colorBlock.setAttribute('data-rgb', color.rgb);
- 
- 
-                const colorName = document.createElement('p');
-                colorName.classList.add('color-name');
-                colorName.textContent = color.name;
- 
- 
-                colorBlockContainer.appendChild(colorBlock);
-                colorBlockContainer.appendChild(colorName);
-                toneSection.appendChild(colorBlockContainer);
-            });
- 
- 
-        colorGrid.appendChild(toneSection);
-    });
- 
  
     // Modal functionality remains the same
     colorGrid.addEventListener('click', e => {
@@ -160,5 +159,4 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'none';
         }
     });
- });
- 
+});
