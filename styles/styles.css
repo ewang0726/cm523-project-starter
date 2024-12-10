@@ -84,14 +84,16 @@ p {
 
 /* Color Grid */
 .color-grid {
-   padding: 20px;
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
    justify-content: center;
-   gap: 30px;
+   margin: 20px;
+   gap: 20px;
 }
 
+.filter-container, .color-grid {
+    width: 100%;
+}
 
 .tone-section{
    display: flex;
@@ -312,4 +314,11 @@ p {
    .modal-content p {
        font-size: 12px;
    }
+}
+
+/* Media query for smaller screens (mobile)*/
+@media (max-width: 600px) {
+    .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
