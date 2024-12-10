@@ -242,9 +242,9 @@ p {
 /* Close Button */
 .modal .close-button {
    position: absolute;
-   top: 15px; /* Adjusted for extra spacing */
-   right: 15px;
-   font-size: 18px;
+   top: 5px; /* Adjusted for extra spacing */
+   right: 20px;
+   font-size: 48px;
    cursor: pointer;
 }
 
